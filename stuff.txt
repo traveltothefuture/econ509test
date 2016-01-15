@@ -1,0 +1,30 @@
+% use Newton's method to solve this problem
+
+p = 0.2;
+deltap = 1e10;
+
+%loop over first order Taylor approximations, and solve for their root
+
+while abs(deltap) > 1e-8
+    
+   deltap = -(0.5*p^(-0.2)+0.5*p^(-0.5)-2)/(-0.1*p^(-1.2)-0.25*p^(-1.5));
+   p = p + deltap
+    
+end
+
+
+a = rand(10);
+b = rand(100);
+c = rand(10000);
+
+tic
+ainv = inv(a);
+toc
+
+tic
+binv = inv(b);
+toc
+
+tic
+cinv = inv(c);
+toc
